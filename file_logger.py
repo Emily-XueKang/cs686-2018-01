@@ -1,8 +1,11 @@
 from logger import logger
 class file_logger(logger):
-	def __init__(self, log_level):
+	#file_logger(3)
+	logger(3)
+	def __init__(self, log_level, filename='file_log.txt'):
 		logger.__init__(self, log_level)
-		self.output = open('file_log.txt', 'a+')
+		self.output = open(filename, 'a+')
+		self.output.close()
 		# message = "0: Starting logger (type = stdout) at log level {}.".format(log_level)
 		# log(self, log_level, message)
 		# message += '\n' + "Enging logger"
